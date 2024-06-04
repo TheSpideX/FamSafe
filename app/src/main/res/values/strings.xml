@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Safe</string>
+    <string name="outside_detail">Open When You are Outside House</string>
+    <string name="sos_detail">In Case of Emergency, keep Telling Family Member to Contact Me</string>
+    <string name="guard_detail">Open when you are on a Potentially Dangerous Journey</string>
+    <string name="security_header">Security</string>
+    <string name="sos_header">SOS</string>
+    <string name="guard_header">GUARD</string>
+    <string name="outside_house_header">Outside House</string>
+</resources>
