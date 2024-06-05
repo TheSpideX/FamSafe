@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
 }
 
 android {
@@ -60,7 +61,7 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
     //Material3
-    implementation("androidx.compose.material3:material3:1.1.1")
+    implementation ("androidx.compose.material3:material3:1.0.0")
 
     //Card
     implementation("androidx.compose.material:material:1.4.0")
@@ -76,6 +77,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.play.services.maps)
+    implementation(libs.androidx.appcompat)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
