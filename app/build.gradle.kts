@@ -61,13 +61,27 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
     //Material3
-    implementation ("androidx.compose.material3:material3:1.0.0")
+    implementation ("androidx.compose.material3:material3:1.2.1")
+    implementation("androidx.compose.material:material:1.0.0")
 
     //Card
-    implementation("androidx.compose.material:material:1.4.0")
+    implementation("androidx.compose.material:material:1.6.7")
 
     //system ui
     implementation ("com.google.accompanist:accompanist-systemuicontroller:0.32.0")
+
+    //for google map
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("com.google.maps.android:maps-compose:5.0.2")
+
+    // Location Services for fetching device location
+    implementation("com.google.android.gms:play-services-location:21.3.0")
+
+    //calculating the distance
+    implementation("com.google.maps.android:maps-compose-utils:5.0.2")
+
+    //for animation
+    implementation ("com.airbnb.android:lottie-compose:6.4.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

@@ -13,5 +13,6 @@ data class PersonData(
     val mobile : String,
     val icon : Int,
     val cond : Int,
-    val time : String
+    val time : String,
+    val id: Int
 )
