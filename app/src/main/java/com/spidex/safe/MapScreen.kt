@@ -35,19 +35,19 @@ import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState
 import com.spidex.safe.ui.theme.background
 
-@OptIn(ExperimentalMaterialApi::class, ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MapScreen(navController: NavController) {
-    val singapore = LatLng(25.597620, 85.183739)
+fun MapScreen(navController: NavController,item : PersonData?) {
+    val location by remember { mutableStateOf(LatLng(item?.latLag?.latitude!!,item.latLag.longitude)) }
     val cameraPositionState = rememberCameraPositionState {
-        position = CameraPosition.fromLatLngZoom(singapore, 15f)
+        position = CameraPosition.fromLatLngZoom(item?.latLag!!, 15f)
     }
 
-    var userLocation by remember { mutableStateOf<LatLng?>(singapore) } // For the map marker
+    var userLocation by remember { mutableStateOf<LatLng?>(location) } // For the map marker
     var isMapLoaded by remember { mutableStateOf(false) }
 
     BottomSheetScaffold(
-        sheetContent = { BottomSheetContent(location = singapore) },
+        sheetContent = { BottomSheetContent(location = location) },
         containerColor = background,
         sheetContainerColor = Color.White
         ) {
@@ -97,6 +97,10 @@ fun MapScreen(navController: NavController) {
     }
 }
 
+
+
+
+
 @Composable
 fun BottomSheetContent(location: LatLng){
     Column(
@@ -105,6 +109,5 @@ fun BottomSheetContent(location: LatLng){
             .padding(16.dp)
     ) {
         Text("User Location Details")
-        // ... display location information here (latitude, longitude, etc.)
     }
 }

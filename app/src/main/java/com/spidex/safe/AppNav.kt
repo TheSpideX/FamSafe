@@ -3,6 +3,8 @@
 package com.spidex.safe
 
 import android.annotation.SuppressLint
+import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -32,16 +34,19 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.exyte.animatednavbar.AnimatedNavigationBar
 import com.exyte.animatednavbar.animation.balltrajectory.Parabolic
 import com.exyte.animatednavbar.animation.indendshape.Height
 import com.exyte.animatednavbar.animation.indendshape.shapeCornerRadius
 import com.exyte.animatednavbar.utils.noRippleClickable
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.google.android.gms.maps.model.LatLng
 import com.spidex.safe.ui.theme.background
 import com.spidex.safe.ui.theme.green
 import com.spidex.safe.ui.theme.red
@@ -60,7 +65,8 @@ fun AppNavigation() {
         icon = R.drawable.ic_man,
         cond = 2,
         time = "12:00",
-        id = 0
+        id = 0,
+        latLag = LatLng(25.597620, 85.183739)
     )
     val newItem1 = PersonData(
         name = "Satyam",
@@ -72,7 +78,8 @@ fun AppNavigation() {
         icon = R.drawable.ic_man,
         cond = 0,
         time = "11:00",
-        id = 1
+        id = 1,
+        latLag = LatLng(25.597620, 85.183739)
     )
     val tempListData : List<PersonData> = listOf(newItem0,newItem1)
 
@@ -173,15 +180,16 @@ fun AppNavigation() {
     ) { innerPadding ->
 
         NavHost(navController = navController, startDestination = startDestination, modifier = Modifier.padding(innerPadding)) {
-            composable(NavigationRoute.Home.route) {
-                HomeScreen(tempListData){
-                    showBottomNav = false
+            composable(route = NavigationRoute.Home.route) {
+                HomeScreen(tempListData, navigateToMaps = {
+                    navController.currentBackStackEntry?.savedStateHandle?.set("PersonData", it)
                     navController.navigate(NavigationRoute.Map.route){
-                        popUpTo(NavigationRoute.Home.route){
+                        showBottomNav = false
+                        popUpTo(NavigationRoute.Home.route) {
                             saveState = true
                         }
                     }
-                }
+                })
             }
             composable(NavigationRoute.Security.route) {
                 SecurityScreen()
@@ -190,7 +198,8 @@ fun AppNavigation() {
                 ProfileScreen()
             }
             composable(NavigationRoute.Map.route){
-                MapScreen(navController)
+                val data : PersonData? = navController.previousBackStackEntry?.savedStateHandle?.get<PersonData>("PersonData")
+                MapScreen(navController,data)
                 DisposableEffect(Unit) {
                     onDispose {
                         showBottomNav = true

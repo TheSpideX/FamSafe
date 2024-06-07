@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -39,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        dataBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -51,6 +53,9 @@ android {
 }
 
 dependencies {
+
+    implementation ("com.google.code.gson:gson:2.11.0")
+
     //Animated Navigation Bar
     implementation("com.exyte:animated-navigation-bar:1.0.0")
 
@@ -78,10 +83,11 @@ dependencies {
     implementation("com.google.android.gms:play-services-location:21.3.0")
 
     //calculating the distance
-    implementation("com.google.maps.android:maps-compose-utils:5.0.2")
+    implementation("com.google.maps.android:maps-compose-utils:3.8.2")
 
     //for animation
     implementation ("com.airbnb.android:lottie-compose:6.4.1")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -93,6 +99,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.play.services.maps)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.media3.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

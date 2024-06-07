@@ -11,6 +11,7 @@ val normal_padding = 16.dp
 val extra_padding = 32.dp
 val less_padding = 8.dp
 
+val more_elevation = 32.dp
 val normal_elevation = 16.dp
 val less_elevation = 8.dp
 val lesser_elevation = 4.dp
