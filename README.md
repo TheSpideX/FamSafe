@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/TheSpideX/FamSafe/raw/main/app/src/main/res/mipmap-hdpi/ic_launcher.png" width="100" />  
+  <img src="https://github.com/TheSpideX/FamSafe/assets/171694578/fa06c15b-7832-4da8-a315-2dd89db7cc14" width="100" />  
 </p>
 <p align="center">
   <h1 align="center">SafeTrack</h1>
