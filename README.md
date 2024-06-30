@@ -8,7 +8,7 @@
   *A Real-Time Location Sharing App for Groups*
 </p>
 <p align="center">
-  <img src="https://img.shields.io/github/license/TheSpideX/FamSafe" alt="license">
+  <img src="https://img.shields.io/github/license/TheSpideX/FamSafe?style=flat&color=0080ff" alt="license">
   <img src="https://img.shields.io/github/last-commit/TheSpideX/FamSafe" alt="last-commit">
   <img src="https://img.shields.io/github/languages/top/TheSpideX/FamSafe" alt="repo-top-language">
   <img src="https://img.shields.io/github/languages/count/TheSpideX/FamSafe" alt="repo-language-count">
