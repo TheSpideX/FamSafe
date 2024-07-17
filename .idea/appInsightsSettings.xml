@@ -9,13 +9,16 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.spidex.safe" />
+                  <option name="mobileSdkAppId" value="1:807389277988:android:c715df5978c7cb54e84db1" />
+                  <option name="projectId" value="famsafe-425517" />
+                  <option name="projectNumber" value="807389277988" />
                 </ConnectionSetting>
               </option>
-              <option name="signal" value="SIGNAL_UNSPECIFIED" />
+              <option name="failureTypes">
+                <list />
+              </option>
+              <option name="signal" value="SIGNAL_REPETITIVE" />
               <option name="timeIntervalDays" value="THIRTY_DAYS" />
               <option name="visibilityType" value="ALL" />
             </InsightsFilterSettings>

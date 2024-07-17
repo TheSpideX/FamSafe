@@ -20,3 +20,5 @@ val grey = Color(0xFF808080)
 val lightRed = Color(0xFFeed9da)
 val lightGreen = Color(0xFFd8e8e7)
 val lightYellow = Color(0xFFede6d7)
+
+val colorForCreate = Color(0xFF9F85EC)

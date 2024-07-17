@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "807389277988",
+    "firebase_url": "https://famsafe-425517-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "famsafe-425517",
+    "storage_bucket": "famsafe-425517.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807389277988:android:c715df5978c7cb54e84db1",
+        "android_client_info": {
+          "package_name": "com.spidex.safe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeyj9IUeKglkfPjYROIsjVDcqNXez7v6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
